@@ -401,19 +401,19 @@
 /*    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
     @media only screen and (max-width: 420px) 
     {
-        .container{
-            margin:10px;
-        }
+        .container{margin:10px;}
+        
+        .content{padding:0 0 200 0}
         
         .skills p1 {column-count: 1;}
         .skills ul {column-count: 1;}
         
         .tools ul {column-count: 1;}
         
-        fieldset{margin:10px;
+        fieldset{margin:15px;
             align-items: center;
             justify-content: center;
-            padding: 25px;
+            padding: 20px;
             width:100%;
         }
         
@@ -431,25 +431,15 @@
         top:12px;
         }
         
-        .me legend{ 
-        margin-left:-12px;
-        }
+        .me legend{margin-left:-12px;}
     
-        .experience legend{ 
-            margin-left:32px;
-        }
+        .experience legend{margin-left:32px;}
 
-        .skills legend{ 
-            margin-left:6px;
-        }
+        .skills legend{margin-left:6px;}
 
-        .education legend{ 
-            margin-left:28px;
-        }
+        .education legend{margin-left:28px;}
 
-        .awards legend{ 
-            margin-left:8px;
-        }
+        .awards legend{margin-left:8px;}
         
         .contact2 legend{margin-left: 20px;}
     }
