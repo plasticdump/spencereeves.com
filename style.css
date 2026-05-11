@@ -270,8 +270,6 @@
     }
 
     .education .pluslist{column-count: 1;}
-
-.education .h1 {}
     
     .awards{
         display:flex;
@@ -412,16 +410,17 @@
         
         .tools ul {column-count: 1;}
         
-        fieldset{margin:15px;
+        fieldset{margin:10px;
             align-items: center;
             justify-content: center;
-            width:75%;
+            padding: 20px;
+            width:100%;
         }
         
         .me fieldset
         {
         display: flex;
-        width: 75%;
+        width: 100%;
         }
         
         legend
@@ -433,26 +432,26 @@
         }
         
         .me legend{ 
-        margin-left:-32px;
+        margin-left:-12px;
         }
     
         .experience legend{ 
-            margin-left:12px;
+            margin-left:32px;
         }
 
         .skills legend{ 
-            margin-left:-14px;
+            margin-left:6px;
         }
 
         .education legend{ 
-            margin-left:8px;
+            margin-left:28px;
         }
 
         .awards legend{ 
             margin-left:8px;
         }
         
-        .contact2 legend{margin-left: 0px;}
+        .contact2 legend{margin-left: 20px;}
     }
     
     
@@ -599,4 +598,3 @@ body{margin:0;}
 {
     body{background-color: black;}
 }
-
