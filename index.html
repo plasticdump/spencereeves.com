@@ -1,190 +1,171 @@
-<! doctype html>
-
+<!DOCTYPE html>
 <html lang="en">
-    <!-- jQuery library -->
-    <link rel="stylesheet" href="style.css" type="text/css">
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta charset="UTF-8">
-        <title>SPENCEREEVES</title>
-        <link rel="stylesheet" href="style.css" href="https://use.typekit.net/obh1xfi.css">
-        <style>
-             @import url('https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap');
-        </style>
-    </head>
-
-    <body>
-        
-   
-
-<body>
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <!--MOVE BACKGROUND WITH MOUSE-->
-            <div class="bg-img"></div>
-            
-            <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous">
-            </script>
-            
-            <script src="jquery.backgroundMove.js"></script>
-            
-            <script>$('.bg-img').backgroundMove({movementStrength:'100'});
+    <title>SPENCEREEVES</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="https://use.typekit.net/obh1xfi.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap');
+    </style>
+</head>
+<body>
+    <h1 class="sr-only">Spencer Reeves — graphic designer and digital creative</h1>
+
+    <div class="bg-img"></div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="jquery.backgroundMove.js"></script>
+    <script>
+        $('.bg-img').backgroundMove({ movementStrength: '100' });
     </script>
-            <script src="https://unpkg.com/smoothscroll-polyfill/dist/smoothscroll.min.js"></script>
-            <script src="https://unpkg.com/smoothscroll-anchor-polyfill"></script>
-            
-            <script>$('a[href^="#"]').on('click', function(event) {     var hash = '#' + $(this).attr('href').split('#')[1]     var element = $(hash)     if (element.length) {       event.preventDefault();       history.pushState(hash, undefined, hash)       $('html, body').animate({scrollTop: element.offset().top}, 500)     }   });       window.addEventListener('popstate', function(e) {     if(e.state && e.state.startsWith('#') && $(e.state).length){       $('html, body').animate({scrollTop: $(e.state).offset().top}, 500)     }   });    $('html, body').on("scroll mousedown wheel DOMMouseScroll mousewheel keyup touchmove", function(){     $('html, body').stop();   });</script>
-            
-            
-            
-            <div class="nameCircle"></div>
-            
+    <script src="https://unpkg.com/smoothscroll-polyfill/dist/smoothscroll.min.js"></script>
+    <script src="https://unpkg.com/smoothscroll-anchor-polyfill"></script>
+    <script>
+        $('a[href^="#"]').on('click', function (event) {
+            var hash = $(this).attr('href');
+            if (!hash || hash.length < 2) return;
+            var $element = $(hash);
+            if ($element.length) {
+                event.preventDefault();
+                history.pushState(hash, '', hash);
+                $('html, body').animate({ scrollTop: $element.offset().top }, 500);
+            }
+        });
+        window.addEventListener('popstate', function (e) {
+            if (e.state && typeof e.state === 'string' && e.state.charAt(0) === '#' && $(e.state).length) {
+                $('html, body').animate({ scrollTop: $(e.state).offset().top }, 500);
+            }
+        });
+        $('html, body').on('scroll mousedown wheel DOMMouseScroll mousewheel keyup touchmove', function () {
+            $('html, body').stop();
+        });
+    </script>
+
+    <div class="nameCircle"></div>
+
     <ul class="menu" style="list-style-type:none">
             <li><a href="#about"><span class="plus">+</span>ABOUT</a></li>
             <li><a href="#contact2"><span class="plus">+</span>CONTACT</a></li>
-            <li><a href="https://www.behance.net/spencereeves" target="_blank"><span class="plus">+</span>PORTFOLIO</a></li>
+            <li><a href="https://www.behance.net/spencereeves" target="_blank" rel="noopener noreferrer"><span class="plus">+</span>PORTFOLIO</a></li>
     </ul>
-        
+
 <!--RESUME/ABOUT AREA-->
-<div id="about"></div>    
+    <div id="about"></div>
     <div class="content">
-        
-            <div class="higlightCircle"></div>
-        
-      <form class='me'>
-     <fieldset>
-      <legend>ME</legend>
-        <p1>Hi, I'm <i>Spencer Reeves</i>. I’m a <b><u>graphic designer & digital creative.</u></b> I have 7+ years of experience designing with marketing agencies,
+
+        <div class="highlightCircle"></div>
+
+        <section class="me" aria-label="About">
+            <fieldset>
+                <legend>ME</legend>
+                <p class="intro">Hi, I'm <i>Spencer Reeves</i>. I’m a <b><u>graphic designer & digital creative.</u></b> I have 7+ years of experience designing with marketing agencies,
 working with a wide scope of clients nationwide on a multitude of projects and campaigns of varying scale. I love learning and working
 with all things tech. I spend my free time practicing photography, photo editing and videography, teaching myself new skills,
 or wandering around outside — you'll often find me hiking, biking, swimming, skating, camping, and exploring the world around me.
-        </p1>
-     </fieldset>
-    </form>
+                </p>
+            </fieldset>
+        </section>
 
-    <form class='experience'>
-     <fieldset>
-      <legend><b>EXPERIENCE</b></legend>
-        <h1>GRAPHIC DESIGNER <span> | 11/2021 → Current</span></h1>
-        <h2>Blufish Design Studio, <span><i>Scottsdale, Arizona</i></span></h2>
-        <ul class="pluslist">
-            <li>Email marketing campaign & newsletter design </li>
-            <li>Print collateral layout design & production</li>
-            <li>Multi-format campain design direction</li>
-            <li>Brand & Community logo & identity creation</li>
-            <li>Multi-platform digital ad design</li>
-        </ul>  
-        <br><br>
-         
-         <h1>XPRESS STUDIO DESIGNER <span> | 5/2018 → 8/2021</span></h1>
-        <h2>Saatchi & Saatchi X, <span><i>Fayetteville, Arkansas</i></span></h2>
-        <ul class="pluslist">
-            <li>Print & digital marketing production design</li>
-            <li>Retail in-store structure design & product mockups</li>
-            <li>Ecommerce digital ad design &
-                image asset creation</li>
-            <li>Design & development of updated agency</li>
-            <li>identity design & internal materials</li>
-            <li>Client-facing deck design</li>
-        </ul>  
-        <br><br>
+        <section class="experience" aria-label="Experience">
+            <fieldset>
+                <legend><b>EXPERIENCE</b></legend>
+                <h2 class="job-title">GRAPHIC DESIGNER <span>  11/2021 → Current</span></h2>
+                <h3 class="job-meta">Blufish Design Studio, <span><i>Scottsdale, Arizona</i></span></h3>
+                <ul class="pluslist">
+                    <li>Email marketing campaign & newsletter design </li>
+                    <li>Print collateral layout design & production</li>
+                    <li>Multi-format campaign design direction</li>
+                    <li>Brand & Community logo & identity creation</li>
+                    <li>Multi-platform digital ad design</li>
+                </ul>
 
-        <h1>CREATIVE MARKETING INTERN <span>| 5/2015-8/2016</span></h1>
-        <h2>Premier Concepts LLC, <span><i>Bentonville, AR</i></span></h2>
-        <ul class="pluslist">
-            <li>Internal marketing design</li>
-            <li>Photo retouching & retail mock-ups</li>
-            <li>Instructional video script writing, audio recording, design & editing</li>
-        </ul>
-        <br><br>
+                <h2 class="job-title">XPRESS STUDIO DESIGNER <span>  5/2018 → 8/2021</span></h2>
+                <h3 class="job-meta">Saatchi & Saatchi X, <span><i>Fayetteville, Arkansas</i></span></h3>
+                <ul class="pluslist">
+                    <li>Print & digital marketing production design</li>
+                    <li>Retail in-store structure design & product mockups</li>
+                    <li>Ecommerce digital ad design &
+                        image asset creation</li>
+                    <li>Design & development of updated agency</li>
+                    <li>identity design & internal materials</li>
+                    <li>Client-facing deck design</li>
+                </ul>
 
-        <h1>FREELANCE & FUN</h1>
-        <ul class="pluslist">
-            <li>Portrait & product photography direction, editing & retouching</li>
-            <li>Logo & brand identity design support</li>
-            <li>Multi-page website design</li>
-            <li>Video production and editing (personal)</li>
-        </ul>
-     </fieldset>
-    </form>
+                <h2 class="job-title">CREATIVE MARKETING INTERN <span> 5/2015-8/2016</span></h2>
+                <h3 class="job-meta">Premier Concepts LLC, <span><i>Bentonville, AR</i></span></h3>
+                <ul class="pluslist">
+                    <li>Internal marketing design</li>
+                    <li>Photo retouching & retail mock-ups</li>
+                    <li>Instructional video script writing, audio recording, design & editing</li>
+                </ul>
 
-        
-    <!--
-    <form class='awards'>
-     <fieldset>
-      <legend><b>AWARDS</b></legend>
-        <h1>HUSTLE AWARD <span> + OTHER NOMINATIONS</span></h1>
-        <p1>
-        SAATCHI & SAATCHI X – 2018
-        <br>
-         </p1>
-     </fieldset>
-    </form>
-    -->
-        
-    <form class='skills'>
-     <fieldset>
-      <legend><b>SKILLS</b></legend>
-        <ul class="pluslist">
-            <li>Digital marketing</li>
-            <li>Photography</li>
-            <li>Videography</li>
-            <li>Web layout design</li>
-            <li>Graphic Design</li>
-            <ul class=minuslist>
-                <li> Digital & print</li>
-                <li> Brand Identity</li>
-                <li> UX/UI</li>
-            </ul>    
-        </ul>
-         
-     </fieldset>
-     
-     <fieldset>
-      <legend><b>TOOLS</b></legend>
-        <ul class="pluslist">
-            <li>Photoshop</li>
-            <li>Illustrator</li>
-            <li>InDesign</li>
-            <li>Lightroom</li>
-            <li>After Effects</li>
-            <li>Final Cut Pro</li>
-            <li>Logic Pro X</li>
-            <li>Hubspot</li>
-            <li>MacOS</li>
-            <li>Sony Cameras</li>
-        </ul>
-     </fieldset>
-       
-        
-    <fieldset class='education'>
-        <legend><b>EDUCATION</b></legend>
-            <h1>UNIVERSITY OF ARKANSAS, <span> Fayetteville</span></h1>
-            
-            <h2>Bachelor of Arts in Graphic Design</h2>
-        <ul class=pluslist><li>Secondary focus in Photography<br><i>Fall 2014 → Summer 2017</i></li>
-     </fieldset>
-     
-     
-    <fieldset class="contact2">
-            <legend><b>CONTACT</b></legend>
-            <!--    
-            <legend><b>CONTACT</b></legend>
-            <span class="plus2">+</span><a href="mailto:spencereeves@ymail.com"> SPENCEREEVES@YMAIL.COM</a><br>
-            <span class="plus2">+</span><a href="https://www.instagram.com/spencereeves/" target="_blank"> @SPENCEREEVES</a><br>
-            <span class="plus2">+</span><a href="tel:479-372-8173"> 479.372.8173</a><br>
-        -->
-            <ul class="pluslist">
-                <li><a href="https://www.youtube.com/@spencereeves/"> YOUTUBE.COM/@SPENCEREEVES</a></li>
-                <li><a href="https://www.instagram.com/spencereeves/" target="_blank">INSTAGRAM @SPENCEREEVES</a></li>
-                <li><a href="https://www.linkedin.com/in/spencereeves/"> LINKEDIN</a></li>
-            </ul>
-     </fieldset>
+                <h2 class="job-title">FREELANCE & FUN</h2><br>
+                <ul class="pluslist">
+                    <li>Portrait & product photography direction, editing & retouching</li>
+                    <li>Logo & brand identity design support</li>
+                    <li>Multi-page website design</li>
+                    <li>Video production and editing (personal)</li>
+                </ul>
+            </fieldset>
+        </section>
 
-        <div id="contact2"></div>
-    </form>
+        <section class="skills" aria-label="Skills, tools, education, and contact">
+            <fieldset>
+                <legend><b>SKILLS</b></legend>
+                <ul class="pluslist">
+                    <li>Digital marketing</li>
+                    <li>Photography</li>
+                    <li>Videography</li>
+                    <li>Web layout design</li>
+                    <li>Graphic Design
+                        <ul class="minuslist">
+                            <li> Digital & print</li>
+                            <li> Brand Identity</li>
+                            <li> UX/UI</li>
+                        </ul>
+                    </li>
+                </ul>
+            </fieldset>
+
+            <fieldset>
+                <legend><b>TOOLS</b></legend>
+                <ul class="pluslist">
+                    <li>Photoshop</li>
+                    <li>Illustrator</li>
+                    <li>InDesign</li>
+                    <li>Lightroom</li>
+                    <li>After Effects</li>
+                    <li>Final Cut Pro</li>
+                    <li>Logic Pro X</li>
+                    <li>Hubspot</li>
+                    <li>MacOS</li>
+                    <li>Sony Cameras</li>
+                </ul>
+            </fieldset>
+
+            <fieldset class="education">
+                <legend><b>EDUCATION</b></legend>
+                <h2 class="job-title">UNIVERSITY OF ARKANSAS, <span> Fayetteville</span></h2>
+                <h3 class="job-meta">Bachelor of Arts in Graphic Design</h3>
+                <ul class="pluslist"><li>Secondary focus in Photography<br>Fall 2014 → Summer 2017</li></ul>
+            </fieldset>
+
+            <fieldset class="contact2">
+                <legend><b>CONTACT</b></legend>
+                <ul class="pluslist">
+                    <li><a href="https://www.youtube.com/@spencereeves/">YOUTUBE.COM/@SPENCEREEVES</a></li>
+                    <li><a href="https://www.instagram.com/spencereeves/" target="_blank" rel="noopener noreferrer">INSTAGRAM @SPENCEREEVES</a></li>
+                    <li><a href="https://www.linkedin.com/in/spencereeves/">LINKEDIN</a></li>
+                </ul>
+            </fieldset>
+
+            <div id="contact2"></div>
+        </section>
 
     </div>
-    
+
 <!-- <div class="footerbannerarea">
         <div class="footerbanner">
             <span>☻ This website was hand-coded from scratch with love ❤︎ by Spencer Reeves without the use of AI!</span>
@@ -193,18 +174,3 @@ or wandering around outside — you'll often find me hiking, biking, swimming, s
     </div>  -->
 </body>
 </html>
-
-    
-        
-    
-
-<!--
-    <script>
-        function toggle('about') {
-        var x = document.getElementById('about');
-        if (x.style.display === "none") 
-            {x.style.display = "block";}
-        else {x.style.display = "none";}
-        }
-        </script>
--->
