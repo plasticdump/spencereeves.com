@@ -3,57 +3,10 @@
     src: url(fonts/IntegralCF-Bold.otf);
 }
 
-@font-face{
-    font-family: IntegralCF;
-    src: url(fonts/IntegralCF-Bold.otf);
-    }
-    .button {
-      color: black;
-      cursor: pointer;
-      padding: 18px;
-      width: 100%;
-      border: none;
-      text-align: left;
-      outline: none;
-      font-size: 15px;
-      font-weight:bold;
-    }
-    
-
-    .content #contact{
-        order:10;}
-    
-    .p{font-size:25px;}
-
-    .footerbanner{
-        font-family: acumin-pro, sans-serif;
-        background-color: #62072E;
-        color:black;
-        overflow: hidden;
-        white-space: nowrap;
-        box-sizing: border-box;
-        animation: scroll 20s linear infinite;
-        font-size:clamp(6px,);
-        width:fit-content;
-  }
-    .footerbanner:hover {
-        animation-play-state: paused; /* Pauses animation on hover */
-        }
-
- @keyframes scroll {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
-  }
-
-    .active, .button:hover {
-        font-size:20px;
-        transition:.1s;
-        background-color: black;
-        color: white;
-    }
+section{margin:0px;}
 
     .content {
-        padding: 0 18px;
+        padding: 0 20px 200px 20px;
 /*        max-height: 0;*/
         overflow:visible;
         display: flex;
@@ -64,23 +17,21 @@
         color:white;
         margin-bottom: 40;
         margin-top: 50px;
-        padding-bottom: 200;
     }    
 
-/*
-       .container{
-        display:flex;
-        flex-wrap: wrap;
-        align-items: flex-start;
-        align-content: center;
-        margin:50px;
-        max-height: ;
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
         overflow: hidden;
-        transition: max-height 0.3s ease-out;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
     }
-*/
 
-    h1{
+    h2.job-title{
         font-size: 16pt;
         font-weight: 600;
         margin-left: 0px;
@@ -90,7 +41,7 @@
         text-align: left;
     }
     
-    h2{
+    h3.job-meta{
         font-size: 14pt;
         margin-top: 0px;
         margin-left: 0px;
@@ -100,13 +51,18 @@
         font-style: normal;
     }
     
-    p1{ padding-top: 0px;
+    .intro{ margin: 0;
+        padding-top: 0px;
         padding-left: 0px;
         width:100%;
         height:auto;
         line-height: 1.25;
         flex-wrap: wrap;
         }
+
+    .experience fieldset > ul.pluslist:not(:last-child) {
+        margin-bottom: 2em;
+    }
     
     
     .pluslist{
@@ -140,7 +96,7 @@
     }
     
     span{
-        font-size: 12pt;
+        font-size: 10pt;
         font-weight: 400;
         
     }
@@ -174,7 +130,7 @@
     legend{
         font-family: IntegralCF;
         color:#62072E;
-        font-size: 16;
+        font-size: 16px;
         text-align: left;
         background-color: white;
         transform: scale(3, 2.3);
@@ -194,6 +150,7 @@
     .experience legend{ 
         margin-left:70px;
     }
+
     
     .skills legend{ 
         margin-left:20px;
@@ -203,10 +160,6 @@
         margin-left:60px;
     }
     
-    .awards legend{ 
-        margin-left:45px;
-    }
-
     
     
     .me{
@@ -221,9 +174,7 @@
         width:50%;
         order:2;
         height:auto;
-    }
-    
-    .experience p1{line-height: 1.5;
+        margin-bottom: 0px;
     }
     
     /*    +++++++++++++++++++++++++++++*/
@@ -235,11 +186,6 @@
         height:0px;
         order:1;
     }
-    
-    .skills p1{
-        display: block;
-        column-count: 2;
-    line-height: 1.5}
     
     .skills ul{
         display: block;
@@ -265,20 +211,23 @@
     
     .education{
         display:flex;
+        flex-direction: column;
+        align-items: stretch;
         width:100%;
         order:2;
     }
 
     .education .pluslist{column-count: 1;}
-    
-    .awards{
-        display:flex;
-        width:50%;
-        order:x;}
+
+    .skills .education ul.pluslist{
+        column-count: 1;
+    }
     
 /*    ---------------------------*/
     .contact2{
         display:flex;
+        flex-direction: column;
+        align-items: stretch;
         width:100%;
         height:auto;
         order:2;
@@ -286,15 +235,17 @@
     
     .contact2 ul{
         column-count: 1;
+        align-self: stretch;
+        width: 100%;
+        box-sizing: border-box;
     }
-    
-    .contact li{
-        color:white;
-        text-decoration: none;
-    }
-    
-    .contact a:hover{
-        text-decoration-line: underline;
+
+    /* Beat .skills ul multi-column + UA list padding; keep same indent as other .pluslist */
+    .skills .contact2 ul.pluslist{
+        column-count: 1;
+        padding: 0;
+        padding-left: 1.5em;
+        margin-left: 0;
     }
     
     .contact2 legend{
@@ -313,7 +264,7 @@
         filter: blur(50px);
         }
 
-    .nameCircle:hover + .higlightCircle {
+    .nameCircle:hover + .highlightCircle {
         display: block;
         color: #62072E;
     }
@@ -327,12 +278,6 @@
 /*                SCREEN SIZE CHANGES              */
     @media only screen and (min-width: 850px) 
     {
-        .contact{display: none;
-            width:100%;
-            order:2}
-
-        contact2 legend{margin-left: 0px;}
-        
         .skills .contact2{
         display: inline-block;
     }
@@ -371,25 +316,17 @@
         height:auto;
         }
         
-    .awards{
-        display:flex;
-        width:100%;
-        height: auto;
-        order:6;
-        }
-    
     .education{
         display:flex;
+        flex-direction: column;
+        align-items: stretch;
         width:100%;
         height:auto;
         }
 
-        
-    .skills p1{column-count: 2;}
-
-    
     .skills .contact2{
         display: flex;
+        flex-direction: column;
         column-count: 1;
     }
     
@@ -401,19 +338,14 @@
 /*    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
     @media only screen and (max-width: 420px) 
     {
-        .container{margin:10px;}
+        .content{padding:0 0 300px 0}
         
-        .content{padding:0 0 200 0}
-        
-        .skills p1 {column-count: 1;}
         .skills ul {column-count: 1;}
-        
-        .tools ul {column-count: 1;}
         
         fieldset{margin:15px;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: 25px;
             width:100%;
         }
         
@@ -438,44 +370,50 @@
         .skills legend{margin-left:6px;}
 
         .education legend{margin-left:28px;}
-
-        .awards legend{margin-left:8px;}
         
         .contact2 legend{margin-left: 20px;}
+    }
+
+    @media only screen and (min-width: 421px) and (max-width: 600px) {
+        .content {
+            padding-bottom: 250px;
+        }
     }
     
     
     
     
 /* ////////////     LIGHT AND DARK MODE//////////////////////////  */  
-    @media (prefers-color-scheme: light)
+@media (prefers-color-scheme: light)
 {
+    body{background-color: white;}
     .content{background-color: white;}
-    h1{color:black;}
-    h2{color:black;}
-    p1{color:black;}
-    .contact a{color:black;}
+    h2.job-title{color:black;}
+    h3.job-meta{color:black;}
+    .intro{color:black;}
     .skills a{color: black;}
     .pluslist{color:black;}
+    .nameCircle {filter:invert(1);}
+    .menu{filter:invert(1);}
+    .plus{filter:invert(1);}
 }
 
 @media (prefers-color-scheme: dark)
 {
     body{background-color: black;}
     legend{background-color: black;}
-    h1{color:white;}
-    h2{color:white;}
-    p1{color:white;}
+    h2.job-title{color:white;}
+    h3.job-meta{color:white;}
+    .intro{color:white;}
     .pluslist{color:white;}
 }
 
 html{
     scroll-behavior: smooth;
-    --scroll-behavior: smooth;
-    font-family: 'scroll-behavior:smooth', sans-serif;
 }
 
 body{margin:0;}
+
 
 .menu{
     bottom: 0;
@@ -492,7 +430,7 @@ body{margin:0;}
     height:auto;
     float: right;
     font-family: 'Nunito Sans ', sans-serif;
-    font-size: 18;
+    font-size: 18px;
     font-weight: bold;
     line-height: 1;
     text-decoration: none;
@@ -501,24 +439,15 @@ body{margin:0;}
 }
 
 .menu a:hover{
-    font-size:22;
+    font-size: 22px;
 /*    text-decoration:underline;*/
     transition: .1s;  
 }
 
-.menu a:active{
-    
-}
-
 .plus{
-    color:62072E;
-    font-size: 28;
+    color:#62072E;
+    font-size: 28px;
     font-weight:300;
-}
-
-.plus2{
-    color:62072E;
-    font-weight:bold;
 }
 
 .nameCircle{
@@ -533,6 +462,13 @@ body{margin:0;}
     background-image: url(assets/spencereeves-circle.svg);
     animation: rotation 25s infinite linear;
     z-index: 1;
+}
+
+@media only screen and (max-width: 420px) {
+    .nameCircle{
+        margin: 0;
+        left: 20px;
+    }
 }
 
 .bg-img{
@@ -558,7 +494,10 @@ body{margin:0;}
 @media only screen and (min-width: 1200px)
 { 
     .bg-img{background-size: 150%;}
-    .content{margin:10%;}
+    .content{
+        margin:10%;
+        padding-bottom: 200px;
+    }
 /*    .nameCircle{left:12%;}*/
 }
 
@@ -570,22 +509,5 @@ body{margin:0;}
 @media only screen and (max-width: 600px) 
 {
     .bg-img{background-size: 350%; }
-}
-
-
-
-/*AUTO DARK MODE*/
-
-@media (prefers-color-scheme: light)
-{
-    body{background-color: white;}
-    .nameCircle {filter:invert(1);}
-    .menu{filter:invert(1);}
-    .plus{filter:invert(1);}
-}
-
-@media (prefers-color-scheme: dark)
-{
-    body{background-color: black;}
 }
 
